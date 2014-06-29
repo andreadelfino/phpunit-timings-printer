@@ -1,0 +1,36 @@
+<phpunit bootstrap="vendor/autoload.php"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    verbose="true"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="true">
+
+    <!--
+    /* This ResultPrinter is useless if Timings\TestListener is not enabled below */
+    printerFile="vendor/andreadelfino/phpunit-timings-printer/lib/Timings/ResultPrinter.php"
+    printerClass="Dolphin\PHPUnit\Timings\ResultPrinter"
+    -->
+
+    <testsuite name="PHPUnit Timings Printer">
+        <directory>tests</directory>
+    </testsuite>
+
+    <!--
+    /* Collect timings for tests exceeding a given threshold */
+    <listeners>
+        <listener file="vendor/andreadelfino/phpunit-timings-printer/lib/Timings/TestListener.php"
+            class="Dolphin\PHPUnit\Timings\TestListener">
+            <arguments>
+                <double>1.0</double>/* Threshold (default: 1.0) */
+                <boolean>false</boolean>/* Verbose (default: false) */
+            </arguments>
+        </listener>
+    </listeners>
+    -->
+
+</phpunit>

@@ -1,0 +1,10 @@
+[user]
+    name = Andrea Delfino
+    email = andrea.delfino@gmail.com
+    editor = nano
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	ignorecase = true
